@@ -1,6 +1,6 @@
-# Countries of the World — Router Starter (NO ROUTING YET)
+# Countries of the World — React Router
 
-Starter project for **Lab Activity 07**. Four page components are pre-built with real content, but **React Router is not installed and not wired up**. Your job in the lab is to install `react-router` and turn this into a real multi-page app.
+Completed project for **Lab Activity 07**. The app uses React Router for client-side navigation across its pages and includes a catch-all 404 route.
 
 ## Getting Started
 
@@ -11,15 +11,15 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173).
 
-You'll see the Home page rendered inside the Layout. Clicking any nav link (`Countries`, `Bucket List`, `About`) will trigger a full-page reload and land you on a browser 404 — because those URLs aren't wired up on the client. **That's expected. Your lab task is to fix this.**
+The Home page renders inside the shared Layout, and the navigation links switch pages without a full-page reload.
 
 ## Current State
 
-- `main.jsx` — renders `<App />` (no `<BrowserRouter>`)
-- `App.jsx` — renders `<Layout><HomePage /></Layout>` (no route table)
-- `Layout.jsx` — accepts `{ children }`; nav uses `<a href>` (full reloads)
+- `main.jsx` — wraps the app in `<BrowserRouter>`
+- `App.jsx` — defines the route table with a layout route and catch-all 404
+- `Layout.jsx` — renders nested pages with `<Outlet />` and uses `<Link>` navigation
 - Pages — `HomePage`, `CountriesPage`, `BucketListPage`, `AboutPage`, `NotFoundPage` all exist with full content
-- `NotFoundPage` — styled 404 with two intentional JSX bugs for you to fix
+- `NotFoundPage` — styled 404 route with working links
 
 ## Stack
 
@@ -28,7 +28,7 @@ You'll see the Home page rendered inside the Layout. Clicking any nav link (`Cou
 - Tailwind CSS 4 (via `@tailwindcss/vite`)
 - DaisyUI 5
 
-## What You'll Add in Lab 07
+## Lab 07 Requirements Completed
 
 - Install `react-router`
 - Wrap the app in `<BrowserRouter>`

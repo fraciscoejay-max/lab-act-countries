@@ -1,14 +1,22 @@
 import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
+import CountriesPage from "./pages/CountriesPage";
+import BucketListPage from "./pages/BucketListPage";
+import AboutPage from "./pages/AboutPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import { Route, Routes } from "react-router-dom";
 
 const App = () => {
-  // TODO: replace this with a real route table using react-router.
-  // For now the app only shows HomePage. Clicking nav links causes a full
-  // page reload (or a 404) because there's no client-side routing yet.
   return (
-    <Layout>
-      <HomePage />
-    </Layout>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/countries" element={<CountriesPage />} />
+        <Route path="/bucket-list" element={<BucketListPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 };
 
