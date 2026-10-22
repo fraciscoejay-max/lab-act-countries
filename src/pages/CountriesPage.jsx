@@ -7,7 +7,11 @@ const CountriesPage = () => {
       <h1 className="text-3xl font-bold mb-4">Countries</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {COUNTRIES.map((c) => (
-          <Link key={c.code} to={`/countries/${c.code}`} className="card bg-base-100 shadow hover:shadow-lg transition-shadow">
+          <Link
+            key={c.code}
+            to={`/countries/${c.code}`}
+            className="card bg-base-100 shadow hover:shadow-lg transition-all duration-200 cursor-pointer hover:scale-[1.02]"
+          >
             <div className="card-body">
               <div className="flex items-center gap-3">
                 <span className="text-4xl">{c.flag}</span>
