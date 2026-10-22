@@ -16,7 +16,7 @@ The Home page renders inside the shared Layout, and the navigation links switch 
 ## Current State
 
 - `main.jsx` — wraps the app in `<BrowserRouter>`
-- `App.jsx` — defines the route table with a layout route and catch-all 404
+- `App.jsx` — defines the route table with a layout route, nested country detail route, and catch-all 404
 - `Layout.jsx` — renders nested pages with `<Outlet />` and uses `<Link>` navigation
 - Pages — `HomePage`, `CountriesPage`, `BucketListPage`, `AboutPage`, `NotFoundPage` all exist with full content
 - `NotFoundPage` — styled 404 route with working links
@@ -36,6 +36,7 @@ The Home page renders inside the shared Layout, and the navigation links switch 
 - Refactor `Layout` to a layout route with `<Outlet />`
 - Convert `<a href>` → `<Link>` for client-side navigation
 - Add a catch-all `path="*"` for the 404 page
+- Nest the dynamic `/countries/:countryCode` route under `/countries`
 - Fix the two JSX bugs in `NotFoundPage`
 
 See `Lab Activity 07_ Countries of the World with React Router.md` for the full task list.
