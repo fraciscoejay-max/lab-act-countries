@@ -1,5 +1,6 @@
 import Layout from "./components/Layout";
 import CountriesLayout from "./components/CountriesLayout";
+import RequireValidCountry from "./components/RequireValidCountry";
 import HomePage from "./pages/HomePage";
 import CountriesPage from "./pages/CountriesPage";
 import CountryDetailPage from "./pages/CountryDetailPage";
@@ -15,7 +16,9 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/countries" element={<CountriesLayout />}>
           <Route index element={<CountriesPage />} />
-          <Route path=":countryCode" element={<CountryDetailPage />} />
+          <Route element={<RequireValidCountry />}>
+            <Route path=":countryCode" element={<CountryDetailPage />} />
+          </Route>
         </Route>
         <Route path="/bucket-list" element={<BucketListPage />} />
         <Route path="/about" element={<AboutPage />} />

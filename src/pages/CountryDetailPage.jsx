@@ -9,18 +9,6 @@ const CountryDetailPage = () => {
     (c) => c.code.toUpperCase() === countryCode?.toUpperCase()
   );
 
-  if (!country) {
-    return (
-      <div className="max-w-md mx-auto mt-10 text-center space-y-4">
-        <h2 className="text-2xl font-bold">Country not found</h2>
-        <p>No country with code "{countryCode}" exists in our data.</p>
-        <Link to="/countries" className="btn btn-primary">
-          Back to Countries
-        </Link>
-      </div>
-    );
-  }
-
   const handleRandom = () => {
     const others = COUNTRIES.filter((c) => c.code !== country.code);
     const random = others[Math.floor(Math.random() * others.length)];
